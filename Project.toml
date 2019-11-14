@@ -1,0 +1,15 @@
+name = "TrackTools"
+uuid = "35fc609f-f8f5-405b-b5eb-79758256ee14"
+authors = ["Sébastien Celles <s.celles@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+KMLTracks = "4ff081ab-3ccd-427e-9edf-9f84f91777da"
+TimeZones = "f269a46b-ccf7-5d73-abea-4c690281aa53"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
