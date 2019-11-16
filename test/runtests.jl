@@ -1,10 +1,16 @@
 using Test
 using TrackTools
+using TrackTools: interpolate_position
 using TrackTools: matrix_line, calc_intersect_coordinates, hasintersect
 using TrackTools: interpolate_time, find_intersections, TrackPoint
 using TimeZones
 using KMLTracks
 
+@testset "interpolate_position" begin
+    x1, y1, t1 = 0.0, 0.0, ZonedDateTime(2019, 11, 1, 10, 0, 0, tz"UTC")
+    x2, y2, t2 = 2.0, 1.0, ZonedDateTime(2019, 11, 1, 10, 0, 40, tz"UTC")
+    @test interpolate_position(x1, y1, t1, x2, y2, t2, ZonedDateTime(2019, 11, 1, 10, 0, 20, tz"UTC")) == (1.0, 0.5)
+end
 
 @testset "intersect sample" begin
     # positions
